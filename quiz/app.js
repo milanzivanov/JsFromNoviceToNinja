@@ -19,7 +19,7 @@ form.addEventListener("submit", e => {
 
     // show result on page
     // console.log(score);
-
+    scrollTo(0, 0);
     result.querySelector("span").textContent = `${score}%`;
     result.classList.remove("d-none");
 
