@@ -1,10 +1,17 @@
-// find method
-// 1
-const scores = [20, 10, 37, 15, 55, 83, 90];
+// chaining array methods
 
+const products = [
 
-const firstHighScore = scores.find((score) => {
-    return score > 50;
-});
+    {name: "mi home", price: 200},
+    {name: "mi note", price: 150},
+    {name: "scott matrix", price: 300},
+    {name: "hp", price: 300},
+    {name: "mi fit", price: 30},
 
-console.log(firstHighScore);
+];
+
+const promos = products
+    .filter(product => product.price > 20)
+    .map(product => `the ${product.name} is ${product.price / 2} pounds`);
+
+console.log(promos);
