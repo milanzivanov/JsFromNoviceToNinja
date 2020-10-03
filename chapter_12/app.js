@@ -22,9 +22,15 @@ const getTodos = (resource) => {
 };
 
 getTodos('./todos/milan.json').then((data) => {
-    console.log('Promise resolved:', data);
+    console.log('Promise resolved milan:', data);
+    return getTodos('./todos/mica.json');
+}).then(data => {
+    console.log('Promise resolved mica:', data);
+    return getTodos('./todos/milanko.json');
+}).then(data => {
+    console.log('Promise resolved milanko:',data);
 }).catch(err => {
-    console.log(err);
+    console.log('Promise rejected', err);
 })
 
 
