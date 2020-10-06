@@ -22,9 +22,9 @@ class User {
 
 class Admin extends User {
     deleteUser(user) {
-        console.log("test", user);
-        // users = users.filter(u => u.username !== user.username);
-        users = users.filter(u => console.log("this", u));
+        // console.log("test", user);
+        users = users.filter(u => u.username !== user.username);
+        // users = users.filter(u => console.log("this", u));
     }
 }
 
