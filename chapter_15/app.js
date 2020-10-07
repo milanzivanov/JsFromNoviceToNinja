@@ -21,6 +21,12 @@ class User {
 }
 
 class Admin extends User {
+
+    constructor(username, email, title) {
+        super(username, email);
+        this.title = title;
+    }
+
     deleteUser(user) {
         // console.log("test", user);
         users = users.filter(u => u.username !== user.username);
@@ -30,18 +36,10 @@ class Admin extends User {
 
 const userOne = new User('milan', 'milan.zivanov@gmail.com');
 const userTwo = new User('ivan', 'ivan.zivanov@gmail.com');
-const userThree = new Admin('ivanka', 'ivan.ka@gmail.com');
+const userThree = new Admin('ivanka', 'ivan.ka@gmail.com', 'black-belt-ninja');
 
-console.log(userOne, userTwo, userThree);
-userOne.login();
-userOne.logout();
-userOne.incScore().incScore().incScore().logout();
+console.log(userThree);
 
-let users = [userOne, userTwo, userThree];
-console.log(users);
-
-userThree.deleteUser(userTwo);
-console.log(users);
 
 // The 'new' keyword
 // 1 - it creates a new empty object {}
