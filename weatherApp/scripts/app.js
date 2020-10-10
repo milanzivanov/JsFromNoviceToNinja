@@ -19,7 +19,6 @@ cityForm.addEventListener('submit', e => {
 
     // get city value
     const city = cityForm.city.value.trim();
-    // const city = document.querySelector('.input-text').value.trim();
     cityForm.reset();
 
     // update the ui with new city
