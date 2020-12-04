@@ -3,25 +3,31 @@
 function User(username, email) {
     this.username = username;
     this.email = email;
-    this.login = function() {
-        console.log(`${this.username} has logged!!!`);
-    }
 }
 
-// class User {
-//     constructor(username, email) {
-//         // set up properties
-//         this.username = username;
-//         this.email = email;
-//     }
-// }
+User.prototype.login = function() {
+    console.log(`${this.username} has logged in!!!`);
+    // for method chaninng purpuse
+    return this;
+}
+
+User.prototype.logout = function() {
+    console.log(`${this.username} has logged out!!!`);
+    // for method chaninng purpuse
+    return this;
+}
 
 const userOne = new User('milan', 'milan.zivanov@gmail.com');
 const userTwo = new User('ivan', 'ivan.zivanov@gmail.com');
 
 console.log(userOne, userTwo);
-userOne.login();
-userTwo.login();
+// method chaninng purpuse
+userOne.login().logout();
+userTwo.logout();
+
+// Prototypes
+// Every object in js has a prototype
+// Prototypes contain all the methods for that object
 
 // The 'new' keyword
 // 1 - it creates a new empty object {}
