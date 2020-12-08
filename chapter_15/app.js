@@ -1,4 +1,4 @@
-// constructor function
+// constructor function 124
 
 function User(username, email) {
     this.username = username;
@@ -17,10 +17,22 @@ User.prototype.logout = function() {
     return this;
 }
 
+function Admin(username, email, title) {
+    User.call(this, username, email, title);
+    this.title = title;
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function() {
+    console.log("delete user");
+}
+
 const userOne = new User('milan', 'milan.zivanov@gmail.com');
 const userTwo = new User('ivan', 'ivan.zivanov@gmail.com');
+const userThree = new Admin("milojko", "milojko@ms.com", "milojo king fu ninja");
 
-console.log(userOne, userTwo);
+console.log(userOne, userTwo, userThree);
 // method chaninng purpuse
 userOne.login().logout();
 userTwo.logout();
